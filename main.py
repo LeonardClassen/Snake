@@ -92,14 +92,14 @@ while True:
         # update collectables
         # if no coin is on the map
         if not any(isinstance(collectable, Coin) for collectable in collectables):
-            if random.randint(0, 1000) < 10: # x% chance that coin will appear
+            if random.randint(0, 1000) < 30: # x% chance that coin will appear
                 collectables.append(Coin(world))
         # if no mouse is on the map
         if not any(isinstance(collectable, Mouse) for collectable in collectables):
             collectables.append(Mouse(world))
         # if no abdi is on the map
         if not any(isinstance(collectable, Abdi) for collectable in collectables):
-            if random.randint(0, 1000) < 20:  # x% chance that coin will appear
+            if random.randint(0, 1000) < 7:  # x% chance that coin will appear
                 collectables.append(Abdi(world))
 
         # update coins
