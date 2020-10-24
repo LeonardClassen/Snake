@@ -7,8 +7,9 @@ class World():
         self.game_over = False
         self.clocktime = 100
         self.clocktime_increment = 0
-        self.block_size = 10
-        self.level_size = 50
+        self.final_score = 10000
+        self.block_size = 20
+        self.level_size = 30
         self.level_wall = []
         self.wall_color = [200, 200, 200]
         self.width = self.level_size*self.block_size
