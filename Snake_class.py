@@ -100,7 +100,7 @@ class Snake():
                     if other_player.attacks > 0:
                         self.body_length = bp_idx
                         self.body = self.body[0:bp_idx]
-                        attack_sound = pygame.mixer.Sound(random.choice(self.attack_sounds,1))
+                        attack_sound = pygame.mixer.Sound(random.choice(self.attack_sounds))
                         attack_sound.play()
                         other_player.attacks -= 1
                         break
