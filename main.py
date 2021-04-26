@@ -37,13 +37,14 @@ while True:
     scoreboard = Scoreboard(world)
     # set players
     players.clear()
-    players.append(Snake('Player 1', 10*world.block_size, (world.level_size-5)*world.block_size, 1,  pygame.K_a,    pygame.K_d,     pygame.K_w,  pygame.K_s,    [255, 0, 0], world, 20))
-    players.append(Snake('Player 2', 10*world.block_size, 5*world.block_size, 1, pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, [100, 100, 100], world, 20))
+    players.append(Snake('Player 1', 10*world.block_size, (world.level_size-5)*world.block_size, 1,  pygame.K_a,    pygame.K_d,     pygame.K_w,  pygame.K_s,    [255, 0, 255], world, 20))
+    players.append(Snake('Player 2', 10*world.block_size, 5*world.block_size, 1, pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, [255, 255, 0], world, 20))
     collectables.append(Mouse(world))
     clock_decrement_counter = 0
 
     # Main Loop
     run = True
+    pause = False
     while run:
         pygame.time.wait(world.clocktime)
 
@@ -56,8 +57,16 @@ while True:
                 run = False  # exit the game
                 break
 
-        # Check for keys getting presses & move snake
         keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_SPACE] and not pause:
+            pause = True
+        elif keys[pygame.K_SPACE] and pause:
+            pause = False
+
+        if pause:
+            continue
+
         for player in players:
             player.move(keys)
 

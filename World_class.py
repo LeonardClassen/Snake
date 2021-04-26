@@ -5,9 +5,9 @@ class World():
     def __init__(self):
         self.run = True
         self.game_over = False
-        self.clocktime = 100
+        self.clocktime = 200
         self.clocktime_increment = 0
-        self.final_score = 4000
+        self.final_score = 10000
         self.block_size = 20
         self.level_size = 35
         self.level_wall = []
